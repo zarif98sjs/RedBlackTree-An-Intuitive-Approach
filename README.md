@@ -1,7 +1,7 @@
 # **RedBlackTree : An Intuitive Appraoch**
 
 
-![](RBTDrawings/Images/Title2.png)
+![](RBTDrawings/Images/Title.png)
 
 # **Monologue**
 
@@ -22,27 +22,32 @@ So , we need to somehow make it balanced such that on average the height is **`l
 
 ## **A slightly modified BST**
 
-Let's consider a slight variant of the RBT . Instead of 1 key per node as in the regular BST , we will store upto 2 keys per node in this case .
+Let's consider a slight variant of the RBT . Instead of 1 key per node as in the regular BST , we will store upto 2 keys per node in this case and each node can have upto 3 child .
 
-![](/Images/2-3%20Tree.png)
+![](/RBTDrawings/Images/ModBST.png)
 
-That's it ! No other difference . 
+That's it ! No other difference .
 
-Now first consider insertion in this tree . How will we insert a node ?   
+Now first consider **insertion** in this tree . How will we insert a node ?   
 The idea is almost identical to regular BST . We compare the key wih the one in the tree and decide to go left , right or **middle** . Yes , the middle part is the only new thing here . This addition of new option is not hard to see why , since there can be 2 keys per node , the number of paths to take will be 3 of course !  
-Now , what happens when  we find the position for ou insertion key . If adding this key doesn't change the property that we assumed (atmost 2 keys per node) , we can easily just add it ! 
+Now , what happens when  we find the position for insertion key . If adding this key doesn't change the property that we assumed (atmost 2 keys per node) , we can easily just add it ! 
 - **When can we just add it without any concern ?**  
-If we find that there is only 1 key , then we can just add another key and our tree properties will be perfectly fine ! 
-![](/Images/insert1.png)
-![](/Images/insert2.png)
+If we find that there is only 1 key , then we can just add another key and our tree properties will be perfectly fine !
+
+    ![](RBTDrawings/Images/ModInsert1.png)
+    
+    ![](RBTDrawings/Images/ModInsert2.png)
 &nbsp;
 
 - **When does problem arise ?**  
 The problematic case : we find the corresponding place for insertion and we insert it . If after insertion we see there are 3 keys , we are in troubble : ( As mentioned earlier , there can be atmost 2 keys per node . So , we need to somehow fix this unstable node . Otherwise we are doomed . Here is an example .
-![](Images/insert3.png)
-![](/Images/insert4.png)
-Now that we are stuck , it's not hard no find a way around in this tree . We see that `R` is sitting lonely out there and has a place for one extra friend . We push up the middle key of the unstable node and voila we are good again . There are no more 3 key node in this tree . 
-![](Images/insert5.png)
+
+    ![](RBTDrawings/Images/ModInsert3.png)
+
+    ![](RBTDrawings/Images/ModInsert4.png)
+Now that we are stuck , it's not hard no find a way around in this tree . We see that `18` is sitting lonely out there and has a place for one extra friend . We push up the middle key of the unstable node and voila we are good again . There are no more 3 key node in this tree . 
+
+    ![](RBTDrawings/Images/ModInsert5.png)
 Whoosh ! Nice save : D   
 
 Now if you have good observation , you might have observed that all the leaf nodes have same distance from the root . This is not just a conincedence . Let's see why this is the case . 
