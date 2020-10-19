@@ -1,18 +1,24 @@
 # **RedBlackTree : An Intuitive Appraoch**
 
+
+![](RBTDrawings/Images/Title2.png)
+
 # **Monologue**
 
-I remember when the first time I studied **`Red Black Tree`** **(RBT)** it was all a very big puzzle . A seemily random _rotations_ and _colorings_ seems to somehow balance a **`Binary Search Tree`** **(BST)** . But I had no intuition for why these rotations and colorings seem to magically balance the BST . I had no idea what the **`RED`** and **`BLACK`** node represents . I didn't even understand why they exist in the first place . After all , what has coloring got to do with the balancing of a Binary Search Tree . And why are they called Red and Black in the first place , why not any other colors (_the answer will be hilarious when you find the answer later in this writing_) . All in all , it was a giant black box . All these Insert and Delete cases , nothing properly made sense . The number of unanswered questions stacked up . So , I embarked on a mission  and after scouring through the internet past month and with a bit of imagination and sleepless nights , I seem to find answers to all the questions that my dumb brain was unable to grasp . This writing is to accumulate all these answers and make an intuitive approach to Red BLack Trees so that dumb people like me can also have a proper intuition for the underlying operations in Red Black Tree . You might never need to understand the underlying intuitions behind all the operations . You can just call `stl:map` or Java `Hashmap` and can easily pass your life in peace . But if you do care for the intuition , _you are in for a ride_ : D
+I remember when the first time I studied **`Red Black Tree`** **(RBT)** it was all a very big puzzle . A seemily random _rotations_ and _colorings_ seems to somehow balance a **`Binary Search Tree`** **(BST)** . But I had no intuition for why these rotations and colorings seem to magically balance the BST .   
 
-The whole writing will be very long . So it is recommended that you finish this in multiple sittings : )
+&nbsp;
+I had no idea what the **`RED`** and **`BLACK`** node represents . I didn't even understand why they exist in the first place . After all , what has coloring got to do with the balancing of a Binary Search Tree , right ? . And why are they even called Red and Black in the first place , why not any other colors (_the answer is quite hilarious XD_) . All in all , it was **a giant black box** . All these Insert and Delete cases , nothing properly made sense . The number of unanswered questions stacked up and up . So , I embarked on a mission  to find answer to these and after scouring through the internet past few weeks and with a bit of imagination and sleepless nights , I think I finally got ahold of the answers to all the questions that my dumb brain was unable to grasp : ) . This writeup is to accumulate all these answers and make an intuitive approach to Red BLack Trees so that dumb people like me can also have a proper intuition for the underlying operations in Red Black Tree . You might never need to understand the underlying intuitions behind all the operations . You can just call **stl** **`map`** or **`set`** in `c++` and **`TreeMap`** in `java` , and can easily pass your life in peace . But if you do care for the intuition , _you are in for a ride_ : D
+
+The whole writeup will be very long . So it is recommended that you finish this in multiple sitting : )
 
 # **The Story Begins**
 
-To properly understand anything you need to know it's past . To me it's not optional , it's a must condition . In my search for proper understanding of Red Black Trees , this is when it started to make sense for the first time . 
+To properly understand anything you need to know its past . To me it's not optional , it's a must condition . In my search for proper understanding of Red Black Trees , this is when it started to make sense to me for the first time . 
 
 I assume that you are familiar with Binary Search Trees and their shortcomings ( The complexity depends on tree height and in the worst case the height can be N , making all the operations **`O(N)`** )
 
-So , we need to somehow make it balanced such that on average the height is **`logN`** . Red Black Tree with it magic rotations and colorings seems to somehow do this . But this is not the first data structure to do this . The key to understanding RBT lies on the first few data strucutres that attempted to solve this balance of BSTs .
+So , we need to somehow make it balanced such that on average the height is **`logN`** . Red Black Tree with it magic rotations and colorings seems to somehow do this . But this is not the first data structure to do this . The key to understanding RBT lies on the first few varient of this data strucutre that attempted to solve this balance of BSTs .
 
 ## **A slightly modified BST**
 
