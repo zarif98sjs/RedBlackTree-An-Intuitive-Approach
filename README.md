@@ -61,13 +61,13 @@ Now if you have _good observation_ , you might have observed that _all the leaf 
 &nbsp;
  We have seen 2 different type of insertions so far and if you noticed , none of them changed the height of the tree . Now let's consider a case where the push up is such that there is an increase of height . 
 
-![](RBTDrawings/Images/ModInsert6.png)
+![](RBTDrawings/Images/ModInsert6.PNG)
 
-![](RBTDrawings/Images/ModInsert7.png)
+![](RBTDrawings/Images/ModInsert7.PNG)
 
-![](RBTDrawings/Images/ModInsert8.png)
+![](RBTDrawings/Images/ModInsert8.PNG)
 
-![](RBTDrawings/Images/ModInsert9.png)
+![](RBTDrawings/Images/ModInsert9.PNG)
 
  Did you see what just happened ? The height of the tree increased by 1 and the distance of all the leaf nodes increased exactly by 1 . Thus leading to having all the leaf nodes in the same height/depth .
 
@@ -186,12 +186,12 @@ This time , the node we deleted has black sibling and no red children . Let see 
 
 The idea to solve this is we hand our problem to the parent . And if the parent couldn't solve , then we repeat the same process . We know that it will be fixed some time in the future because we just saw in the case of parent being the root , our problem is solved immediately . 
 
-![](RBTDrawings/Images/Delete2.png)
+![](RBTDrawings/Images/Delete2.PNG)
 
 **The Easier One**  
 This time , the node we deleted has black sibling and at least one red children . Let's see how this one goes -
 
-![](RBTDrawings/Images/Delete3.png)
+![](RBTDrawings/Images/Delete3.PNG)
 
 Pretty easy !
 
@@ -201,7 +201,7 @@ There is just one corner case , if the only red child was the right node in the 
 
 We are almost done . We just need to take care of one last thing . The red sibling case - 
 
-![](RBTDrawings/Images/Delete4.png)
+![](RBTDrawings/Images/Delete4.PNG)
 
 And now , we are done . See ! It was not that bad . Once we know why we are doing what , it immensly simplifies stuffs !
 
