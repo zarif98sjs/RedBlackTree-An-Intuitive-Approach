@@ -1,11 +1,11 @@
-# **RedBlackTree : An Intuitive Appraoch**
+# **RedBlackTree : An Intuitive Approach**
 
 
 ![](RBTDrawings/Images/Title.png)
 
 # **Monologue**
 
-I remember when the first time I studied **`Red Black Tree`** **(RBT)** , it was an enigma . A seemily random _rotations_ and _colorings_ seems to somehow balance a **`Binary Search Tree`** **(BST)** . But I had no intuition for why these rotations and colorings seem to magically balance the BST . I used to read these horrible case works and my reaction everytime after it got balanced was - Surprised Pikachu Face :
+I remember when the first time I studied **`Red Black Tree`** **(RBT)** , it was an enigma . A seemingly random _rotations_ and _colorings_ seems to somehow balance a **`Binary Search Tree`** **(BST)** . But I had no intuition for why these rotations and colorings seem to magically balance the BST . I used to read these horrible case works and my reaction everytime after it got balanced was - Surprised Pikachu Face :
 
 <p align="center">
   <img src="RBTDrawings/Images/Pikachu.webp" />
@@ -19,11 +19,11 @@ You might never need to understand the underlying intuitions behind all the oper
 
 # **The Story Begins**
 
-To properly understand anything you need to know its past . In my search for proper understanding of Red Black Trees , this is when it actully started to make sense to me for the first time . 
+To properly understand anything you need to know its past . In my search for proper understanding of Red Black Trees , this is when it actually started to make sense to me for the first time . 
 
 I assume that you are familiar with Binary Search Trees and their shortcomings ( The complexity depends on tree height and in the worst case the height can be N , making most of the operations **`O(N)`** )
 
-So , we need to somehow make it balanced such that on average the height is **`logN`** . Red Black Tree with it magic `rotations` and `colorings` seems to somehow do this . But this is not the only data structure to do this . _The key to understanding RBT lies on the first few varient of this data strucutre that attempted to solve this balance of BSTs_.
+So , we need to somehow make it balanced such that on average the height is **`logN`** . Red Black Tree with it magic `rotations` and `colorings` seems to somehow do this . But this is not the only data structure to do this . _The key to understanding RBT lies on the first few variant of this data structure that attempted to solve this balance of BSTs_.
 
 ## **A slightly modified BST**
 
@@ -37,7 +37,7 @@ Now first consider **insertion** in this tree . How will we insert a node ?
 &nbsp;
 The idea is almost identical to regular BST . We compare the key wih the one in the tree and decide to go left , right or **middle** . Yes , the middle part is the only new thing here . This addition of new option is not hard to see why , since there can be 2 keys per node , the number of paths to take will be 3 of course !  
 &nbsp;
-Now , what happens when  we find the position for insertion key . If adding this key doesn't change the property that we assumed (atmost 2 keys per node) , we can just easily add it ! 
+Now , what happens when  we find the position for insertion key . If adding this key doesn't change the property that we assumed (at most 2 keys per node) , we can just easily add it ! 
 - **When can we just add it without any concern ?**  
 If we find that there is only 1 key , then we can just add another key and our tree properties will be perfectly fine !
 
@@ -47,7 +47,7 @@ If we find that there is only 1 key , then we can just add another key and our t
 &nbsp;
 
 - **When does problem arise ?**  
-The problematic case : we find the corresponding place for insertion and we insert it . If after insertion we see there are 3 keys , we are in troubble : ( As mentioned earlier , there can be atmost 2 keys per node . So , we need to somehow fix this unstable node . Otherwise we are doomed . Here is an example .
+The problematic case : we find the corresponding place for insertion and we insert it . If after insertion we see there are 3 keys , we are in trouble : ( As mentioned earlier , there can be at most 2 keys per node . So , we need to somehow fix this unstable node . Otherwise we are doomed . Here is an example .
 
     ![](RBTDrawings/Images/ModInsert3.png)
 
@@ -57,7 +57,7 @@ Now that we are stuck , it's not hard no find a way around in this tree . We see
     ![](RBTDrawings/Images/ModInsert5.png)
 Nice save : D   
 
-Now if you have _good observation_ , you might have observed that _all the leaf nodes have same distance from the root_ . This is not just a conincedence . Let's see why this is the case .   
+Now if you have _good observation_ , you might have observed that _all the leaf nodes have same distance from the root_ . This is not just a coincidence . Let's see why this is the case .   
 &nbsp;
  We have seen 2 different type of insertions so far and if you noticed , none of them changed the height of the tree . Now let's consider a case where the push up is such that there is an increase of height . 
 
@@ -94,18 +94,18 @@ I will just show an example and won't dive deep .
 &nbsp;
 
 # **Changing Vantage Point**
-Simulating this tree seems to be very easy in hand . But coding up this is not . Maintaing varaible number of keys in a node and also handling tree spliting can be a cumbersome job to do . If you are a lazy guy like me you wouldn't dare to implement this .
+Simulating this tree seems to be very easy in hand . But coding up this is not . Maintaining variable number of keys in a node and also handling tree splitting can be a cumbersome job to do . If you are a lazy guy like me you wouldn't dare to implement this .
 
 &nbsp;
-Now , let's change our vantage point . Let's cleverly represent this nodes so that we don't have to deal with all these tree spliting and variable nodes .
+Now , let's change our vantage point . Let's cleverly represent this nodes so that we don't have to deal with all these tree splitting and variable nodes .
 
 &nbsp;
-With a bit of imagination , we can think the 2 key nodes as 2 seperate nodes glued together by an edge . If we draw this link by leaning on the side a bit , you can see that it is just your familiar BST .
+With a bit of imagination , we can think the 2 key nodes as 2 separate nodes glued together by an edge . If we draw this link by leaning on the side a bit , you can see that it is just your familiar BST .
 
 &nbsp;
 But wait ! How do you distinguish between an **ordinary edge** and a **glue edge** . Yes ! we color it : D 
 
-Here's how we can represnt the **`2 key nodes`** :
+Here's how we can represent the **`2 key nodes`** :
 
 ![](RBTDrawings/Images/GlueEdge1.png)
 
@@ -113,7 +113,7 @@ And here's how we can represent the **`3 key nodes`** :
 
 ![](RBTDrawings/Images/GlueEdge2.png)
 
-We can also instead color children nodes thus making it conveninent to implement as tracking edge colors in BST implementation would not be a headache anymore .
+We can also instead color children nodes thus making it convenient to implement as tracking edge colors in BST implementation would not be a headache anymore .
 
 ![](RBTDrawings/Images/GlueEdge3.png) 
 
@@ -162,11 +162,11 @@ You might have also seen a rule which goes something like this : when there are 
 Insertion was pretty easy . Most of the books represent delete in RBT as an awful hard operation . Infact when I first read the deletion , it was just a bunch of messy casework to memorize and I had no idea what the heck we were actually doing . But now , it has changed . Deletion is not difficult than insertion in any way , if not easier !
 
 &nbsp;
-But , first let's recap some RBT properties which can be easily seen from our modified BST analagoy :
+But , first let's recap some RBT properties which can be easily seen from our modified BST analogy :
 - In modified BST , all leaf nodes were at the same height . So , in our RBT all the subtrees will have same black height (remember how red nodes doesn't contribute to the height , we just lean on either side to mimic BST)
 - Root is always black 
 
-This 2 properties are enough to understand Deleteion .
+This 2 properties are enough to understand Deletion .
 
 Deletion process is almost similar to the normal BST . I won't dive deep . Here is a recap :
 - If we have less than 2 child , we can delete this node
@@ -176,7 +176,7 @@ Now in case of RBT , there can be some violation . Let's see :
 - If we are deleting a red node , we are safe (Remember that we can easily delete from 2 key node in our slightly modified BST as it doesn't affect the height of the tree)
 - But if we are deleting a black node , we are in trouble : (  Deleting a black node will violate the first property we have seen earlier . We gotta fix this . This is the whole fiasco is about .
 
-Let's begin . Rather than telling you a bunch of awful rules to memorize , let us see what can and can't be done intuitively . Let me walk you thorugh -
+Let's begin . Rather than telling you a bunch of awful rules to memorize , let us see what can and can't be done intuitively . Let me walk you thorough -
 
 **The Easy One**  
 
@@ -203,13 +203,13 @@ We are almost done . We just need to take care of one last thing . The red sibli
 
 ![](RBTDrawings/Images/Delete4.PNG)
 
-And now , we are done . See ! It was not that bad . Once we know why we are doing what , it immensly simplifies stuffs !
+And now , we are done . See ! It was not that bad . Once we know why we are doing what , it immensely simplifies stuffs !
 
 # **Getting our hands dirty (with code)**
 
 All these efforts till now were all for this . We had to come up with glue nodes and what not just so that we can easily implement this thing . So , let's get into it !
 
-I remmber when i first the RBT pseudocode from Cormen (CLRS) , I had a mini heart attack . My first reaction was , " Eww, how can a code be this ugly ! " And the impression hasn't changed a bit . It is still one of the most ugliest implementation I've seen till date . Coding a red black tree doesn't have to be this ugly .
+I remember when i first the RBT pseudocode from Cormen (CLRS) , I had a mini heart attack . My first reaction was , " Eww, how can a code be this ugly ! " And the impression hasn't changed a bit . It is still one of the most ugliest implementation I've seen till date . Coding a red black tree doesn't have to be this ugly .
 
 Instead , I will guide you with a recursive implementation which I found much easier to code . Much much easier to debug and the size of the code will be half the size of the cormen implementation if not less . 
 
@@ -237,11 +237,23 @@ struct Node
 };
 ```
 
-## **Auxilary Operations**
+## **Auxiliary Operations**
 
-The main auxilary operations are **`rotation`** and **`color flipping`** . The implementations are pretty much straightforward . If we had taken 2 seperate pointers , the implementation would be like this 
+The main auxiliary operations are **`rotation`** and **`color flipping`** . The implementations are pretty much straightforward . If we had taken 2 separate pointers , the implementation would be like this 
 
 ```c++
+
+#define RED 0
+#define BLACK 1
+
+bool red(Node *node)
+{
+    if(node==NULL)
+        return false;
+
+    return node->color == RED;
+}
+
 void colorFlip(Node *node)
 {
     node->color = node->color^1;
@@ -300,7 +312,7 @@ Node* doubleRotate(Node *node,bool dir) /// align reds  , then rotate
 }
 ```
 
-We have already made our code half the size ! You will be amazed to see the magic of this further when we don't have to seperately handle the mirror cases in insert and delete operation : D At least I was , when I found out this trick when scouring through the internet which dramatically reduced my original insert implementation .
+We have already made our code half the size ! You will be amazed to see the magic of this further when we don't have to separately handle the mirror cases in insert and delete operation : D At least I was , when I found out this trick when scouring through the internet which dramatically reduced my original insert implementation .
 
 Let's get into insertion .
 
@@ -326,7 +338,7 @@ Node* __insert(Node *node,int data)
 }
 ```
 
-We just need to write this magic function **`INSERT_FIX_UP`** and we are done ! Iterative implementations needs to track parent and also handing all the cases can be really pain . But , we will take advantage of the bottom up approach . If a RBT property violation has occured , we will fix on our way up in the recursion !
+We just need to write this magic function **`INSERT_FIX_UP`** and we are done ! Iterative implementations needs to track parent and also handing all the cases can be really pain . But , we will take advantage of the bottom up approach . If a RBT property violation has occurred , we will fix on our way up in the recursion !
 
 ```c++
 Node* INSERT_FIX_UP(Node *node,bool dir)
