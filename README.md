@@ -1,6 +1,8 @@
 # **RedBlackTree : An Intuitive Approach**
 
+### **If you prefer dark mode , you can read it from [here](https://zarif98sjs.github.io/blog/blog/redbacktree/)**
 
+&nbsp;
 ![](RBTDrawings/Images/Title.png)
 
 # **Monologue**
@@ -507,7 +509,7 @@ If you have come this far down , let me tell you one more thing . The RBT we stu
 Congrats on reading this far : D If you still have any problem , do let me know . And if you liked the writeup do let me know too !
 
 # **Reference**
-Ah lot of them , I'm going to mention as many as I can .
+Ah! lot of them , I'm going to mention as many as I can remember.
 - [https://en.wikipedia.org/wiki/Red%E2%80%93black_tree?oldformat=true](https://en.wikipedia.org/wiki/Red%E2%80%93black_tree?oldformat=true)
 - [https://www.cs.purdue.edu/homes/ayg/CS251/slides/chap13c.pdf](https://www.cs.purdue.edu/homes/ayg/CS251/slides/chap13c.pdf)
 - [http://smile.ee.ncku.edu.tw/old/Links/MTable/Course/DataStructure/2-3,2-3-4&red-blackTree_952.pdf](http://smile.ee.ncku.edu.tw/old/Links/MTable/Course/DataStructure/2-3,2-3-4&red-blackTree_952.pdf)
