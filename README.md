@@ -5,18 +5,25 @@
 
 # **Monologue**
 
-I remember when the first time I studied **`Red Black Tree`** **(RBT)** it was all a very big puzzle . A seemily random _rotations_ and _colorings_ seems to somehow balance a **`Binary Search Tree`** **(BST)** . But I had no intuition for why these rotations and colorings seem to magically balance the BST .   
+I remember when the first time I studied **`Red Black Tree`** **(RBT)** , it was an enigma . A seemily random _rotations_ and _colorings_ seems to somehow balance a **`Binary Search Tree`** **(BST)** . But I had no intuition for why these rotations and colorings seem to magically balance the BST . I used to read these horrible case works and my reaction everytime after it got balanced was - Surprised Pikachu Face :
+
+<p align="center">
+  <img src="RBTDrawings/Images/Pikachu.webp" />
+</p>
 
 &nbsp;
-I had no idea what the **`RED`** and **`BLACK`** node represents . I didn't even understand why they exist in the first place . After all , what has coloring got to do with the balancing of a Binary Search Tree , right ? . And why are they even called Red and Black , why not any other colors (_the answer is hilarious XD_) . All in all , it was **a giant black box** . All these Insert and Delete cases , nothing properly made sense . The number of unanswered questions stacked up and up . So , I had to do something to find the answers . And after scouring through the internet past few weeks and with a bit of imagination , I think I finally got ahold of the answers to all the questions that my dumb brain was unable to grasp : ) . This writeup is to accumulate all these answers and make an intuitive approach to Red BLack Trees so that dumb people like me can also have a proper intuition for the underlying operations in Red Black Tree . You might never need to understand the underlying intuitions behind all the operations . You can just call **stl** **`map`** or **`set`** in `c++` and **`TreeMap`** in `java` , and can easily pass your life in peace . But if you do care for the intuition , _you are in for a ride_ : D
+I had no idea what the **`RED`** and **`BLACK`** node represents . I didn't even understand why they exist in the first place . After all , what has coloring got to do with the balancing of a Binary Search Tree , right ? . And why are they even called Red and Black , why not any other colors (_the answer is hilarious XD_) . All in all , it was a giant **black box** . All these `Insert` and `Delete` cases , nothing properly made sense . The number of unanswered questions stacked up and up . So , I had to do something about it . After few weeks of _researching_ (read _**googling**_) , scouring through the internet and with a bit of imagination , I think I finally got ahold of the answers to all the questions that my dumb brain was unable to grasp : ) . This writeup is to accumulate all these answers and make an intuitive approach to Red BLack Trees so that dumb people like me can also have a proper intuition for the underlying operations in Red Black Tree and so that you don't have to do all go through all of these by yourself again . 
+
+&nbsp;
+You might never need to understand the underlying intuitions behind all the operations . You can just call **stl** **`map`** or **`set`** in `c++` and **`TreeMap`** in `java` , and can easily pass your life in peace . But if you do care for the intuition , _you are in for a ride_ : D
 
 # **The Story Begins**
 
-To properly understand anything you need to know its past . To me it's not optional , it's a must condition . In my search for proper understanding of Red Black Trees , this is when it actully started to make sense to me for the first time . 
+To properly understand anything you need to know its past . In my search for proper understanding of Red Black Trees , this is when it actully started to make sense to me for the first time . 
 
 I assume that you are familiar with Binary Search Trees and their shortcomings ( The complexity depends on tree height and in the worst case the height can be N , making most of the operations **`O(N)`** )
 
-So , we need to somehow make it balanced such that on average the height is **`logN`** . Red Black Tree with it magic rotations and colorings seems to somehow do this . But this is not the first data structure to do this . _The key to understanding RBT lies on the first few varient of this data strucutre that attempted to solve this balance of BSTs_.
+So , we need to somehow make it balanced such that on average the height is **`logN`** . Red Black Tree with it magic `rotations` and `colorings` seems to somehow do this . But this is not the only data structure to do this . _The key to understanding RBT lies on the first few varient of this data strucutre that attempted to solve this balance of BSTs_.
 
 ## **A slightly modified BST**
 
@@ -29,6 +36,7 @@ That's it ! No other difference .
 Now first consider **insertion** in this tree . How will we insert a node ?   
 &nbsp;
 The idea is almost identical to regular BST . We compare the key wih the one in the tree and decide to go left , right or **middle** . Yes , the middle part is the only new thing here . This addition of new option is not hard to see why , since there can be 2 keys per node , the number of paths to take will be 3 of course !  
+&nbsp;
 Now , what happens when  we find the position for insertion key . If adding this key doesn't change the property that we assumed (atmost 2 keys per node) , we can just easily add it ! 
 - **When can we just add it without any concern ?**  
 If we find that there is only 1 key , then we can just add another key and our tree properties will be perfectly fine !
@@ -53,10 +61,13 @@ Now if you have _good observation_ , you might have observed that _all the leaf 
 &nbsp;
  We have seen 2 different type of insertions so far and if you noticed , none of them changed the height of the tree . Now let's consider a case where the push up is such that there is an increase of height . 
 
- ![](Images/insert6.png)
- ![](Images/insert7.png)
- ![](Images/insert8.png)
- ![](Images/insert9.png)
+![](RBTDrawings/Images/ModInsert6.png)
+
+![](RBTDrawings/Images/ModInsert7.png)
+
+![](RBTDrawings/Images/ModInsert8.png)
+
+![](RBTDrawings/Images/ModInsert9.png)
 
  Did you see what just happened ? The height of the tree increased by 1 and the distance of all the leaf nodes increased exactly by 1 . Thus leading to having all the leaf nodes in the same height/depth .
 
@@ -289,7 +300,7 @@ Node* doubleRotate(Node *node,bool dir) /// align reds  , then rotate
 }
 ```
 
-We have already made our code half the size ! You will be amazed to see the magic of this further when we don't have to seperately handle the mirror cases in insert and delete operation : D At least I was when I found out this trick in a blog which dramatically reduced my original insert implementation .
+We have already made our code half the size ! You will be amazed to see the magic of this further when we don't have to seperately handle the mirror cases in insert and delete operation : D At least I was , when I found out this trick when scouring through the internet which dramatically reduced my original insert implementation .
 
 Let's get into insertion .
 
@@ -479,11 +490,12 @@ Ah , we are done finally ! It was not that awful , was it ?
 
 # **Optimization and Conclusion**
 
-If you have come this far down , let me tell you one more thing . The RBT we studied is the classical old RBT . There are other implementations of RBT which makes the code even more shorter and easier to write . Among these , one is Left Leaning Red Black Tree (LLRB) . It is nothing but the implementation of the first modified BST we saw . And about the implementation , we can also use a topdown approach , that is also easier to understand tahn the bottom up approach . If you do feel interested , check them out .
+If you have come this far down , let me tell you one more thing . The RBT we studied is the classical old RBT . There are other implementations of RBT which makes the code even more shorter and easier to write . Among these , one is **`Left Leaning Red Black Tree`** **(LLRB)** . It is nothing but the implementation of the _first modified BST_ we saw . And about the implementation , we can also use a **`topdown approach`** , that is also easier to understand than the bottom up approach . If you do feel interested , check them out .
 
-Thanks for reading this far : D If you still have any problem , do let me know . And if you liked the writeup do let me know too !
+Congrats on reading this far : D If you still have any problem , do let me know . And if you liked the writeup do let me know too !
 
 # **Reference**
+Ah lot of them , I'm going to mention as many as I can .
 - [https://en.wikipedia.org/wiki/Red%E2%80%93black_tree?oldformat=true](https://en.wikipedia.org/wiki/Red%E2%80%93black_tree?oldformat=true)
 - [https://www.cs.purdue.edu/homes/ayg/CS251/slides/chap13c.pdf](https://www.cs.purdue.edu/homes/ayg/CS251/slides/chap13c.pdf)
 - [http://smile.ee.ncku.edu.tw/old/Links/MTable/Course/DataStructure/2-3,2-3-4&red-blackTree_952.pdf](http://smile.ee.ncku.edu.tw/old/Links/MTable/Course/DataStructure/2-3,2-3-4&red-blackTree_952.pdf)
