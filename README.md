@@ -1,6 +1,6 @@
 # **RedBlackTree : An Intuitive Approach**
 
-### **If you prefer dark mode , you can read it from [here](https://zarif98sjs.github.io/blog/blog/redbacktree/)**
+### **If you prefer dark mode , you can read it from [here](https://zarif98sjs.github.io/blog/blog/redblacktree/)**
 
 &nbsp;
 ![](RBTDrawings/Images/Title.png)
