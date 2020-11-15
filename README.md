@@ -1,4 +1,7 @@
-# **RedBlackTree : An Intuitive Approach**
+
+<hr/>
+<h1 align="center">Red Black Tree : An Intuitive Approach</h1>
+<hr/>
 
 ### **If you prefer dark mode , you can read it from [here](https://zarif98sjs.github.io/blog/blog/redblacktree/)**
 
