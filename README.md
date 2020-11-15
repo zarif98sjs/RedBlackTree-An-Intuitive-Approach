@@ -1,5 +1,4 @@
 
-<hr/>
 <h1 align="center">Red Black Tree : An Intuitive Approach</h1>
 <hr/>
 
@@ -8,7 +7,11 @@
 &nbsp;
 ![](RBTDrawings/Images/Title.png)
 
-# **Monologue**
+
+<hr/>
+<h1 align="center">Monologue</h1>
+<hr/>
+
 
 I remember when the first time I studied **`Red Black Tree`** **(RBT)** , it was an enigma . A seemingly random _rotations_ and _colorings_ seems to somehow balance a **`Binary Search Tree`** **(BST)** . But I had no intuition for why these rotations and colorings seem to magically balance the BST . I used to read these horrible case works and my reaction everytime after it got balanced was - Surprised Pikachu Face :
 
@@ -22,7 +25,9 @@ I had no idea what the **`RED`** and **`BLACK`** node represents . I didn't even
 &nbsp;
 You might never need to understand the underlying intuitions behind all the operations . You can just call **stl** **`map`** or **`set`** in `c++` and **`TreeMap`** in `java` , and can easily pass your life in peace . But if you do care for the intuition , _you are in for a ride_ : D
 
-# **The Story Begins**
+<hr/>
+<h1 align="center">The Story Begins</h1>
+<hr/>
 
 To properly understand anything you need to know its past . In my search for proper understanding of Red Black Trees , this is when it actually started to make sense to me for the first time . 
 
@@ -30,7 +35,11 @@ I assume that you are familiar with Binary Search Trees and their shortcomings (
 
 So , we need to somehow make it balanced such that on average the height is **`logN`** . Red Black Tree with it magic `rotations` and `colorings` seems to somehow do this . But this is not the only data structure to do this . _The key to understanding RBT lies on the first few variant of this data structure that attempted to solve this balance of BSTs_.
 
-## **A slightly modified BST**
+
+<hr/>
+<h1 align="center">A slightly modified BST</h1>
+<hr/>
+
 
 Let's consider a slight variant of the **BST**. Instead of **1 key** per node as in the regular BST , we will store upto **2 keys** per node in this case and each node can have **upto 3 child** .
 
@@ -98,7 +107,10 @@ I will just show an example and won't dive deep .
 
 &nbsp;
 
-# **Changing Vantage Point**
+<hr/>
+<h1 align="center">Changing Vantage Point</h1>
+<hr/>
+
 Simulating this tree seems to be very easy in hand . But coding up this is not . Maintaining variable number of keys in a node and also handling tree splitting can be a cumbersome job to do . If you are a lazy guy like me you wouldn't dare to implement this .
 
 &nbsp;
@@ -137,7 +149,9 @@ It was because the guys who invented this , only had red and black pens to draw 
 
 &nbsp;
 
-# **Inside the Black Box**
+<hr/>
+<h1 align="center">Inside the Black Box</h1>
+<hr/>
 
 ## **Insert**
 
@@ -210,7 +224,9 @@ We are almost done . We just need to take care of one last thing . The red sibli
 
 And now , we are done . See ! It was not that bad . Once we know why we are doing what , it immensely simplifies stuffs !
 
-# **Getting our hands dirty (with code)**
+<hr/>
+<h1 align="center">Getting our hands dirty (with code)</h1>
+<hr/>
 
 All these efforts till now were all for this . We had to come up with glue nodes and what not just so that we can easily implement this thing . So , let's get into it !
 
@@ -505,13 +521,18 @@ Node* DELETE_FIX_UP(Node *node,bool dir, bool &ok)
 
 Ah , we are done finally ! It was not that awful , was it ?
 
-# **Optimization and Conclusion**
+<hr/>
+<h1 align="center">Optimization and Conclusion</h1>
+<hr/>
 
 If you have come this far down , let me tell you one more thing . The RBT we studied is the classical old RBT . There are other implementations of RBT which makes the code even more shorter and easier to write . Among these , one is **`Left Leaning Red Black Tree`** **(LLRB)** . It is nothing but the implementation of the _first modified BST_ we saw . And about the implementation , we can also use a **`topdown approach`** , that is also easier to understand than the bottom up approach . If you do feel interested , check them out .
 
 Congrats on reading this far : D If you still have any problem , do let me know . And if you liked the writeup do let me know too !
 
-# **Reference**
+<hr/>
+<h1 align="center">Reference</h1>
+<hr/>
+
 Ah! lot of them , I'm going to mention as many as I can remember.
 - [https://en.wikipedia.org/wiki/Red%E2%80%93black_tree?oldformat=true](https://en.wikipedia.org/wiki/Red%E2%80%93black_tree?oldformat=true)
 - [https://www.cs.purdue.edu/homes/ayg/CS251/slides/chap13c.pdf](https://www.cs.purdue.edu/homes/ayg/CS251/slides/chap13c.pdf)
