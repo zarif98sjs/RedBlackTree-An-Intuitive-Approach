@@ -14,7 +14,7 @@ I remember when the first time I studied **`Red Black Tree`** **(RBT)** , it was
 </p>
 
 &nbsp;
-I had no idea what the **`RED`** and **`BLACK`** node represents . I didn't even understand why they exist in the first place . After all , what has coloring got to do with the balancing of a Binary Search Tree , right ? . And why are they even called Red and Black , why not any other colors (_the answer is hilarious XD_) . All in all , it was a giant **black box** . All these `Insert` and `Delete` cases , nothing properly made sense . The number of unanswered questions stacked up and up . So , I had to do something about it . After few weeks of _researching_ (read _**googling**_) , scouring through the internet and with a bit of imagination , I think I finally got ahold of the answers to all the questions that my dumb brain was unable to grasp : ) . This writeup is to accumulate all these answers and make an intuitive approach to Red BLack Trees so that dumb people like me can also have a proper intuition for the underlying operations in Red Black Tree and so that you don't have to do all go through all of these by yourself again . 
+I had no idea what the **`RED`** and **`BLACK`** node represents . I didn't even understand why they exist in the first place . After all , what has coloring got to do with the balancing of a Binary Search Tree , right ? . And why are they even called Red and Black , why not any other colors (_the answer is hilarious XD_) . All in all , it was a giant **black box** . All these `Insert` and `Delete` cases , nothing properly made sense . The number of unanswered questions stacked up and up . So , I had to do something about it . After few weeks of _researching_ (read _**googling**_) , scouring through the internet and with a bit of imagination , I think I finally got ahold of the answers to all the questions that my dumb brain was unable to grasp : ) . This writeup is to accumulate all these answers and make an intuitive approach to Red BLack Trees so that dumb people like me can also have a proper intuition for the underlying operations in Red Black Tree and so that you don't have to do go through all of these by yourself again . 
 
 &nbsp;
 You might never need to understand the underlying intuitions behind all the operations . You can just call **stl** **`map`** or **`set`** in `c++` and **`TreeMap`** in `java` , and can easily pass your life in peace . But if you do care for the intuition , _you are in for a ride_ : D
@@ -54,7 +54,7 @@ The problematic case : we find the corresponding place for insertion and we inse
     ![](RBTDrawings/Images/ModInsert3.png)
 
     ![](RBTDrawings/Images/ModInsert4.png)
-Now that we are stuck , it's not hard no find a way around in this tree . We see that `18` is sitting lonely out there and has a place for one extra friend . We push up the middle key of the unstable node and voila we are good again . There are no more 3 key node in this tree . 
+Now that we are stuck , it's not hard to find a way around in this tree . We see that `18` is sitting lonely out there and has a place for one extra friend . We push up the middle key of the unstable node and voila we are good again . There are no more 3 key node in this tree . 
 
     ![](RBTDrawings/Images/ModInsert5.png)
 Nice save : D   
