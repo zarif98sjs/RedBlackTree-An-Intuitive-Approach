@@ -2,7 +2,7 @@
 <h1 align="center">Red Black Tree : An Intuitive Approach</h1>
 <hr/>
 
-### **If you prefer dark mode , you can read it from [here](https://zarif98sjs.github.io/mindcraft/RedBlackTree/)**
+### **You can also read it from my [blog](https://zarif98sjs.github.io/mindcraft/RedBlackTree/)**
 
 &nbsp;
 ![](RBTDrawings/Images/Title.png)
