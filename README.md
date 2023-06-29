@@ -525,9 +525,13 @@ Ah , we are done finally ! It was not that awful , was it ?
 <h1 align="center">Optimization and Conclusion</h1>
 <hr/>
 
-If you have come this far down , let me tell you one more thing . The RBT we studied is the classical old RBT . There are other implementations of RBT which makes the code even more shorter and easier to write . Among these , one is **`Left Leaning Red Black Tree`** **(LLRB)** . It is nothing but the implementation of the _first modified BST_ we saw . And about the implementation , we can also use a **`topdown approach`** , that is also easier to understand than the bottom up approach . If you do feel interested , check them out .
+If you have come this far down, let me tell you one more thing. The RBT we studied is the classical old RBT. There are other implementations of RBT which makes the code even more shorter and easier to write. Among these, one is **`Left Leaning Red Black Tree`** **(LLRB)**. It is nothing but the implementation of the _first modified BST_ we saw. And about the implementation, we can also use a **`topdown approach`**, that is also easier to understand than the bottom-up approach. If you do feel interested, check them out.
 
-Congrats on reading this far : D If you still have any problem , do let me know . And if you liked the writeup do let me know too !
+Congrats on reading this far : D If you still need help, do let me know. ***And if you liked the write-up, you can support me by buying me a cup of coffee!***
+<p align="center">
+<a href="https://www.buymeacoffee.com/zarif98sjs" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+</p>
+
 
 <hr/>
 <h1 align="center">Reference</h1>
