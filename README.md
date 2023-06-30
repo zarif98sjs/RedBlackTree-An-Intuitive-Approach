@@ -2,9 +2,6 @@
 <h1 align="center">Red Black Tree : An Intuitive Approach</h1>
 <hr/>
 
-### **You can also read it from my [blog](https://zarif98sjs.github.io/mindcraft/RedBlackTree/)**
-
-&nbsp;
 ![](RBTDrawings/Images/Title.png)
 
 
