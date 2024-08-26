@@ -424,15 +424,14 @@ Node* __delete(Node *node,int data,bool &ok)
 
             if(red(node)) /// the node is red => just delete it
             {
-                free(node);
                 ok = true;
             }
             else if(red(temp)) /// only child is red => replace with that red child and recolor black . so , black balance restored
             {
                 temp->color = BLACK;
-                free(node);
                 ok = true;
             }
+            free(node);
 
             return temp;
         }
