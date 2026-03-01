@@ -555,5 +555,6 @@ Ah! lot of them , I'm going to mention as many as I can remember.
 - [https://www.cs.usfca.edu/~galles/visualization/RedBlack.html](https://www.cs.usfca.edu/~galles/visualization/RedBlack.html)
 - [https://www.cs.princeton.edu/courses/archive/fall06/cos226/lectures/balanced.pdf](https://www.cs.princeton.edu/courses/archive/fall06/cos226/lectures/balanced.pdf)
 - [https://www.cs.princeton.edu/courses/archive/spring19/cos226/lectures/33BalancedSearchTrees.pdf](https://www.cs.princeton.edu/courses/archive/spring19/cos226/lectures/33BalancedSearchTrees.pdf)
+- [https://www.scaler.com/topics/data-structures/red-black-tree/](https://www.scaler.com/topics/data-structures/red-black-tree/)
 
 
